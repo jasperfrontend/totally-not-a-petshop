@@ -35,7 +35,9 @@
         <div class="col-9 col-md-10">
           <h1 class="text-white font-weight-bold">Werewolfdev's Amazing Pets</h1>
         </div>
-
+        <div class="col-md-12">
+          
+        </div>
       </div>
     </div>
   </div>
