@@ -1,4 +1,8 @@
 <script>
+import { cart } from "../data/cart";
+
+import Checkout from "../routes/Checkout.svelte";
+
   export let pets = [];
 	export let petCount = 3;
 </script>
@@ -40,12 +44,14 @@ img {
           </div>
           <div class="pet-button pl-3 pb-3">
             <a href="/pet/123" class="btn btn-wap-secondary">View &raquo;</a>
+            <button on:click="{() => cart.add(pet)}">ADD TO CART</button>
           </div>
         </div>
       </div>
-    </div>  
-    {/each}
+    </div>
     
+    {/each}
+      
     
     
     <!-- <div class="col-md-4">
