@@ -30,13 +30,13 @@
     <div class="p-3">
       <div class="row d-flex align-items-center">
         <div class="col-3 col-md-2">
-
+          <a href="/"><Svglogo /></a>
         </div>
         <div class="col-9 col-md-10">
           <h1 class="text-white font-weight-bold">Werewolfdev's Amazing Pets</h1>
         </div>
         <div class="col-md-12">
-          
+          <Navigation />
         </div>
       </div>
     </div>
