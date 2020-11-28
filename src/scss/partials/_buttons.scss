@@ -1,8 +1,31 @@
-.btn-wap {
-  background: $color-secondary;
+.btn-base {
   color: $color-white;
-  padding: 8px 16px;
+  padding: 5px 25px 9px;
   border-radius: 100px;
+  font-weight: 600;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-white;
+  }
+}
+.btn-wap-primary {
+  @extend .btn-base;
+  background: $color-primary;
+  &:hover {
+    background: darken($color-primary, 12%);
+  }
+  &:focus {
+    background: darken($color-primary, 8%);
+  }
+  &:active {
+    background: $color-secondary;
+  }
+}
+
+.btn-wap-secondary {
+  @extend .btn-base;
+  background: $color-secondary;
   &:hover {
     background: darken($color-secondary, 12%);
   }

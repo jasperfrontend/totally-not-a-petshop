@@ -8,6 +8,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+:global(html,body,h1,h2,h3,h4,h5,h6,p,div,header,main,footer,ul,ol,li,a,span) {
+  font-family: 'Roboto', sans-serif;
+}
 .site-header {
   background: $color-primary;
 }
@@ -27,14 +30,12 @@
     <div class="p-3">
       <div class="row d-flex align-items-center">
         <div class="col-3 col-md-2">
-          <a href="/"><Svglogo /></a>
+
         </div>
-        <div class="col-7 col-md-10">
+        <div class="col-9 col-md-10">
           <h1 class="text-white font-weight-bold">Werewolfdev's Amazing Pets</h1>
         </div>
-        <div class="navbar-container col-md-12 p-0 m-0">
-          <Navigation />
-        </div>
+
       </div>
     </div>
   </div>
