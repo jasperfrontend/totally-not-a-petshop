@@ -2,6 +2,12 @@
   import Header from './components/Header.svelte';
   import Hero from './components/Hero.svelte';
   import Loop from './components/Loop.svelte';
+
+  // IF nothing in localstorage
+    // Ping the API once
+    // Store the images in localstorage
+  // ELSE
+    // JSON.parse(...)
 </script>
 
 <svelte:head>

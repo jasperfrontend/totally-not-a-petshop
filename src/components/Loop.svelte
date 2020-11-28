@@ -8,8 +8,8 @@ img {
 }
 </style>
 <div class="container">
-<div class="row">
-<div class="col-md-4">
+	<div class="row">
+		<div class="col-md-4">
       <div class="pet mt-4 mb-4">
         <div class="pet-image">
           <img src="https://picsum.photos/id/120/600/400" alt="">
