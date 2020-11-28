@@ -1,0 +1,15 @@
+.btn-wap {
+  background: $color-secondary;
+  color: $color-white;
+  padding: 8px 16px;
+  border-radius: 100px;
+  &:hover {
+    background: darken($color-secondary, 12%);
+  }
+  &:focus {
+    background: darken($color-secondary, 8%);
+  }
+  &:active {
+    background: $color-primary;
+  }
+}
