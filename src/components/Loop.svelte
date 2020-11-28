@@ -1,9 +1,13 @@
 <script>
-	export let pets = 3;
-  import Takeaways from './components/Takeaways.svelte';
-  import Footer from './components/Footer.svelte';
+import { cart } from "../data/cart";
+import Takeaways from './components/Takeaways.svelte';
+import Footer from './components/Footer.svelte';
+import Checkout from "../routes/Checkout.svelte";
+
+export let pets = [];
+export let petCount = 3;
 </script>
-<style>
+<style lang="scss">
 img {
   width: 100%;
   height: auto;
@@ -38,6 +42,67 @@ img {
 }
 </style>
 <div class="container">
+  <div class="row mb-5">
+    {#each pets.slice(0, petCount) as pet, petIndex}
+    <div class="col-md-4">
+      <div class="pet mt-4 mb-4 position-relative">
+        <div class="pet-image position-absolute">
+          <img src={pet.webformatURL} alt="Pet {petIndex}">
+        </div>
+        <div class="pet-content position-absolute z-10" style="z-index: 10; margin-top: 6em">
+          <div class="pet-data mb-3 d-flex justify-content-between">
+            <div class="pet-title m-0 p-3 pb-0">
+              <h3>Exotic Bird Thing</h3>
+            </div>
+            <div class="pet-price m-0 p-3 pb-0">
+              <h3>$4</h3>
+            </div>
+          </div>
+<!--           <div class="pet-button pl-3 pb-3">
+            <a href="/pet/123" class="btn btn-wap-secondary">View &raquo;</a>
+            <button on:click="{() => cart.add(pet)}">ADD TO CART</button>
+          </div> -->
+        </div>
+        <div class="row">
+          <div class="col text-center mb-5">
+            <a href="/pets" class="btn btn-wap-secondary">View our pet collection</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/each}
+      
+    
+    
+    <!-- <div class="col-md-4">
+      <div class="pet mt-4 mb-4 position-relative">
+        <div class="pet-image position-absolute">
+          <img src="https://picsum.photos/id/50/600/400" alt="">
+        </div>
+        <div class="pet-content position-absolute z-10" style="z-index: 10; margin-top: 6em">
+          <div class="pet-data mb-3 d-flex justify-content-between">
+            <div class="pet-title m-0 p-3 pb-0">
+              <h3>Exotic Bird Thing</h3>
+            </div>
+            <div class="pet-price m-0 p-3 pb-0">
+              <h3>$4</h3>
+            </div>
+          </div>
+          <div class="pet-button pl-3 pb-3">
+            <a href="/pet/123" class="btn btn-wap-secondary">View &raquo;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="pet mt-4 mb-4 position-relative">
+        <div class="pet-image position-absolute">
+          <img src="https://picsum.photos/id/200/600/400" alt="">
+        </div>
+        <div class="pet-content position-absolute z-10" style="z-index: 10; margin-top: 6em">
+          <div class="pet-data mb-3 d-flex justify-content-between">
   <div class="row">
 
     <div class="col-md-4">
@@ -62,14 +127,35 @@ img {
         </div>
       </div>
     </div>
+    
+    <div class="col-md-4">
+      <div class="pet mt-4 mb-4 position-relative">
+        <div class="pet-image position-absolute">
+          <img src="https://picsum.photos/id/800/600/400" alt="">
+        </div>
+        <div class="pet-content position-absolute z-10" style="z-index: 10; margin-top: 6em">
+          <div class="pet-data mb-3 d-flex justify-content-between">
+            <div class="pet-title m-0 p-3 pb-0">
+              <h3>Exotic Bird Thing</h3>
+            </div>
+            <div class="pet-price m-0 p-3 pb-0">
+              <h3>$4</h3>
+            </div>
+          </div>
+          <div class="pet-button pl-3 pb-3">
+            <a href="/pet/123" class="btn btn-wap-secondary">View &raquo;</a>
+          </div>
+        </div>
+      </div>
+    </div> -->
 
   </div>
 
-  <div class="row">
+<!--   <div class="row">
     <div class="col text-center mb-5">
       <a href="/pets" class="btn btn-wap-secondary">View our pet collection</a>
     </div>
-  </div>
+  </div> -->
 </div>
 
 <Takeaways />
