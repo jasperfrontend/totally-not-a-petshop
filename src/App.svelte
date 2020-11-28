@@ -1,13 +1,27 @@
 <script>
+  import { onMount } from 'svelte';
   import Header from './components/Header.svelte';
   import Hero from './components/Hero.svelte';
   import Loop from './components/Loop.svelte';
-
-  // IF nothing in localstorage
-    // Ping the API once
-    // Store the images in localstorage
-  // ELSE
-    // JSON.parse(...)
+  import { API_KEY } from './constants/pixabay';
+    
+  let pets = [];
+  
+  async function getInitialAnimals() {
+    const endpoint = `https://pixabay.com/api/?key=${API_KEY}&category=animals&per_page=200&orientation=horizontal&image_type=photo&min_width=600&min_height=400&safesearch=true`;
+    
+    const animalsResponse = await fetch(endpoint);
+    const animalsData = await animalsResponse.json();
+    localStorage.setItem("pet_images", JSON.stringify(animalsData.hits));
+  }
+  
+  onMount(async () => {
+    if (!localStorage.getItem("pet_images")) {
+      await getInitialAnimals();
+    }
+    
+    pets = JSON.parse(localStorage.getItem("pet_images"));
+  });
 </script>
 
 <svelte:head>
@@ -26,6 +40,6 @@
 
 <main>
 
-<Loop pets={3} />
+<Loop {pets} />
 
 </main>
