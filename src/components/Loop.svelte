@@ -10,10 +10,6 @@
 </script>
 
 <style>
-img {
-  width: 100%;
-  height: auto;
-}
 .pet {
   padding: .5em;
 }
@@ -54,7 +50,7 @@ img {
 }
 .pet-button {
   opacity: 0;
-  transition: opacity 200ms ease;
+  transition: opacity 800ms ease;
 }
 </style>
 <div class="container">
