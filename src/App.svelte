@@ -1,11 +1,15 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount, setContext } from 'svelte';
+  import { writable } from 'svelte/store';
   import Header from './components/Header.svelte';
-  import Hero from './components/Hero.svelte';
-  import Loop from './components/Loop.svelte';
+  import Route from './components/Route.svelte';
   import { API_KEY } from './constants/pixabay';
     
-  let pets = [];
+  let pets = writable([]);
+  
+  setContext("pets", {
+    getPets: () => pets
+  });
   
   async function getInitialAnimals() {
     const endpoint = `https://pixabay.com/api/?key=${API_KEY}&category=animals&per_page=200&orientation=horizontal&image_type=photo&min_width=600&min_height=400&safesearch=true`;
@@ -20,7 +24,8 @@
       await getInitialAnimals();
     }
     
-    pets = JSON.parse(localStorage.getItem("pet_images"));
+    const petsData = JSON.parse(localStorage.getItem("pet_images"));
+    pets.set(petsData);
   });
 </script>
 
@@ -35,11 +40,4 @@
 </style>
 
 <Header />
-
-<Hero />
-
-<main>
-
-  <Loop {pets} />
-  
-</main>
+<Route />

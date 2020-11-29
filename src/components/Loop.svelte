@@ -1,11 +1,17 @@
 <script>
-import { cart } from "../data/cart";
-import Takeaways from './Takeaways.svelte';
-import Footer from './Footer.svelte';
+  import { cart } from "../data/cart";
+  import Takeaways from './Takeaways.svelte';
+  import Footer from './Footer.svelte';
+  import { getContext, onMount } from "svelte";
+import { writable } from "svelte/store";
 
-export let pets = [];
-export let petCount = 3;
+  // export let pets = [];
+  export let petCount = 3;
+  let { getPets } = getContext("pets");
+  
+  $: pets = getPets();
 </script>
+
 <style lang="scss">
 img {
   width: 100%;
