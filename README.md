@@ -1,5 +1,2 @@
 ## Totally NOT a petshop
-This is a fun project being built live [on Twitch/werewolfdev](https://twitch.tv/werewolfdev) by [@devwerewolf](https://github.com/devwerewolf) and [@tweemeterstudio](https://github.com/tweemeterstudio). The goal of this project is to create a fun way for viewers to donate on stream and get something in return.
-
-## Something?
-A pet. But then virtual.
+This is a fun project that was built live [on Twitch/werewolfdev](https://twitch.tv/werewolfdev) by [@devwerewolf](https://github.com/devwerewolf) and [@tweemeterstudio](https://github.com/tweemeterstudio). The goal of this project is ~~to create a fun way for viewers to donate on stream and get something in return.~~ to see how well we would work together and what fun thing we could make with Svelte and some HTML, CSS and design love. This experiment turned out rather well, with good viewers on both streaming days.

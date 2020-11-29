@@ -1,4 +1,5 @@
 <script>
+  import { link } from "svelte-routing";
   import Hero from "../components/Hero.svelte";
   import Loop from "../components/Loop.svelte";
 </script>
@@ -18,7 +19,7 @@ h2 {
     <div class="row">
       <div class="col text-center mb-5">
       <hr class="hr mb-5">
-        <a href="/gallery" class="btn btn-wap-secondary">View our pet collection</a>
+        <a href="/gallery" class="btn btn-wap-secondary" use:link>View our pet collection</a>
       </div>
     </div>
   </div>
