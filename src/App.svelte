@@ -8,7 +8,7 @@
   import Home from './routes/Home.svelte';
   
   import { Router, Route } from "svelte-routing";
-import Checkout from './routes/Checkout.svelte';
+  import Checkout from './routes/Checkout.svelte';
     
   let pets = writable([]);
   
