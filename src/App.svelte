@@ -4,8 +4,6 @@
   import Hero from './components/Hero.svelte';
   import Loop from './components/Loop.svelte';
   import { API_KEY } from './constants/pixabay';
-  import { cart } from './data/cart';
-import Checkout from './routes/Checkout.svelte';
     
   let pets = [];
   
@@ -43,6 +41,5 @@ import Checkout from './routes/Checkout.svelte';
 <main>
 
   <Loop {pets} />
-  <Checkout />
   
 </main>
