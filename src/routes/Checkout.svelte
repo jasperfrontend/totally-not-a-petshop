@@ -36,27 +36,40 @@
 }
 </style>
 <div class="container">
-<div class="row">
-  {#each $cart as pet, petIndex}
-  <div class="col-md-4">
-    <div class="pet mt-4 mb-4">
-      <div class="pet-image d-flex justify-content-between align-items-center flex-column" style="background: url({pet.webformatURL}) center center no-repeat; height: 300px;">
-        <div class="pet-content p-3">
-          <div class="pet-data mb-3 d-flex align-items-center justify-content-between">
-            <div class="pet-title m-0 p-3 pb-0">
-              <h3>Pet {petIndex+1}</h3>
-            </div>
-            <div class="pet-price m-0 p-3 pb-0">
-              <h3>$4</h3>
+  <div class="row">
+    {#each $cart as pet, petIndex}
+    <div class="col-md-4">
+      <div class="pet mt-4 mb-4">
+        <div class="pet-image d-flex justify-content-between align-items-center flex-column" style="background: url({pet.webformatURL}) center center no-repeat; height: 300px;">
+          <div class="pet-content p-3">
+            <div class="pet-data mb-3 d-flex align-items-center justify-content-between">
+              <div class="pet-title m-0 p-3 pb-0">
+                <h3>Pet {petIndex+1}</h3>
+              </div>
+              <div class="pet-price m-0 p-3 pb-0">
+                <h3>$4</h3>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="text-center mb-3">
-          <button class="btn btn-wap-secondary" on:click="{() => cart.add(pet)}">Thank you</button>
+          <div class="text-center mb-3">
+            <button class="btn btn-wap-secondary" on:click="{() => cart.remove(pet)}">Remove</button>
+          </div>
         </div>
       </div>
     </div>
+    {/each}
   </div>
-  {/each}
-</div>
+  {#if ($cart.length != 0)}
+  <div class="row">
+    <div class="col-md-12 mt-4 mb-4 text-center">
+      <button class="btn btn-wap-secondary" on:click="{() => cart.clear()}">Clear cart</button>
+    </div>
+  </div>
+  {:else}
+  <div class="row">
+    <div class="col-md-12 mt-4 mb-4 text-center">
+      <h3>Your cart is empty</h3>
+    </div>
+  </div>
+  {/if}
 </div>

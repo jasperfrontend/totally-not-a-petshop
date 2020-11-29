@@ -65,7 +65,7 @@
                 <h3>Pet {petIndex+1}</h3>
               </div>
               <div class="pet-price m-0 p-3 pb-0">
-                <h3>$4</h3>
+                <h3>$5</h3>
               </div>
             </div>
           </div>
