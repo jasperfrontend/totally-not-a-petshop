@@ -18,17 +18,27 @@ img {
 .pet-image {
   width: 100%;
   height: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(15,15,15,.5);
 }
 .pet-content {
   .pet-data {
     background-color: $color-white-opac;
   }
   h3 {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
     color: $color-primary;
     margin-bottom: 0;
   }
+}
+.pet-price h3 {
+  font-size: 18px;
+  border: 1px solid #ccc;
+  background: #efefef;
+  padding: 5px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 </style>
 <div class="container">
@@ -36,8 +46,8 @@ img {
     {#each $pets.slice(0, petCount) as pet, petIndex}
     <div class="col-md-4">
       <div class="pet mt-4 mb-4">
-        <div class="pet-image">
-          <img src={pet.webformatURL} alt="Pet {petIndex}">
+        <div class="pet-image" style="background: url({pet.webformatURL}) center center no-repeat; height: 300px;">
+          <!-- <img src={pet.webformatURL} alt="Pet {petIndex}"> -->
         </div>
         <div class="pet-content">
           <div class="pet-data mb-3 d-flex justify-content-between">
@@ -51,7 +61,7 @@ img {
         </div>
         <div class="row">
           <div class="col text-center mb-5">
-            <button class="btn btn-wap-secondary" on:click="{() => cart.add(pet)}">ADD TO CART</button>
+            <button class="btn btn-wap-secondary" on:click="{() => cart.add(pet)}">Adopt this pet</button>
           </div>
         </div>
       </div>
@@ -62,7 +72,8 @@ img {
 <div class="container">
   <div class="row">
     <div class="col text-center mb-5">
-      <a href="/pets" class="btn btn-wap-secondary">View our pet collection</a>
+    <hr class="hr mb-5">
+      <a href="/gallery" class="btn btn-wap-secondary">View our pet collection</a>
     </div>
   </div>
 </div>

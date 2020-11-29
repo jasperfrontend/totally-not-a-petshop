@@ -27,7 +27,7 @@
         <div class="hero-content p-5 col-md-10">
           <h2>Do you want a pet sheep?</h2>
           <h3 class="mb-4">Have one delivered!</h3>
-          <p><a href="/pets" class="btn btn-lg btn-wap-secondary">View our pet collection &raquo;</a></p>
+          <p><a href="/gallery" class="btn btn-lg btn-wap-secondary">View our pet collection &raquo;</a></p>
         </div>
       </div>
     </div>
