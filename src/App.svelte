@@ -3,27 +3,29 @@
   import { writable } from 'svelte/store';
   import Header from './components/Header.svelte';
   import Route from './components/Route.svelte';
+  import Takeaways from './components/Takeaways.svelte';
+  import Footer from './components/Footer.svelte';
   import { API_KEY } from './constants/pixabay';
-    
+
   let pets = writable([]);
-  
+
   setContext("pets", {
     getPets: () => pets
   });
-  
+
   async function getInitialAnimals() {
     const endpoint = `https://pixabay.com/api/?key=${API_KEY}&category=animals&per_page=200&orientation=horizontal&image_type=photo&min_width=600&min_height=400&safesearch=true`;
-    
+
     const animalsResponse = await fetch(endpoint);
     const animalsData = await animalsResponse.json();
     localStorage.setItem("pet_images", JSON.stringify(animalsData.hits));
   }
-  
+
   onMount(async () => {
     if (!localStorage.getItem("pet_images")) {
       await getInitialAnimals();
     }
-    
+
     const petsData = JSON.parse(localStorage.getItem("pet_images"));
     pets.set(petsData);
   });
@@ -41,3 +43,5 @@
 
 <Header />
 <Route />
+<Takeaways />
+<Footer />

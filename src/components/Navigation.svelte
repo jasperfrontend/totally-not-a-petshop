@@ -48,7 +48,7 @@ let active = false;
         <a class="nav-link" href="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/pets">Pets</a>
+        <a class="nav-link" href="/gallery">Pets</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/cart">Your cart</a>
