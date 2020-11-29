@@ -1,11 +1,17 @@
 <script>
-import { cart } from "../data/cart";
-import Takeaways from './Takeaways.svelte';
-import Footer from './Footer.svelte';
+  import { cart } from "../data/cart";
+  import Takeaways from './Takeaways.svelte';
+  import Footer from './Footer.svelte';
+  import { getContext, onMount } from "svelte";
+import { writable } from "svelte/store";
 
-export let pets = [];
-export let petCount = 3;
+  // export let pets = [];
+  export let petCount = 3;
+  let { getPets } = getContext("pets");
+  
+  $: pets = getPets();
 </script>
+
 <style lang="scss">
 img {
   width: 100%;
@@ -42,7 +48,7 @@ img {
 </style>
 <div class="container">
   <div class="row mb-5">
-    {#each pets.slice(0, petCount) as pet, petIndex}
+    {#each $pets.slice(0, petCount) as pet, petIndex}
     <div class="col-md-4">
       <div class="pet mt-4 mb-4 position-relative">
         <div class="pet-image position-absolute">
