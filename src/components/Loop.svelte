@@ -14,6 +14,9 @@ img {
   width: 100%;
   height: auto;
 }
+.pet {
+  padding: .5em;
+}
 .pet-image {
   width: 100%;
   height: 100%;
@@ -26,11 +29,12 @@ img {
     width: 100%;
     background-color: $color-white-opac;
     border-radius: 4px;
+    border-bottom: 1px solid #fff;
   }
   h3 {
-    font-size: 24px;
-    font-weight: bold;
-    color: $color-primary;
+    font-size: 18px;
+    font-weight: normal;
+    color: $color-dark;
     margin-bottom: 0;
   }
 }
@@ -50,7 +54,7 @@ img {
       <div class="pet mt-4 mb-4">
         <div class="pet-image d-flex justify-content-between align-items-center flex-column" style="background: url({pet.webformatURL}) center center no-repeat; height: 300px;">
           <div class="pet-content p-3">
-            <div class="pet-data mb-3 d-flex justify-content-between">
+            <div class="pet-data mb-3 d-flex align-items-center justify-content-between">
               <div class="pet-title m-0 p-3 pb-0">
                 <h3>Pet {petIndex}</h3>
               </div>
