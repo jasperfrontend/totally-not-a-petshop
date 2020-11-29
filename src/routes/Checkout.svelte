@@ -1,5 +1,6 @@
 <script>
   import { cart } from "../data/cart";
+  import { link } from "svelte-routing";
 </script>
 <style>
 .pet {
@@ -69,6 +70,7 @@
   <div class="row">
     <div class="col-md-12 mt-4 mb-4 text-center">
       <h3>Your cart is empty</h3>
+      <a href="/gallery" class="btn btn-wap-secondary" use:link>Find your new pet</a>
     </div>
   </div>
   {/if}

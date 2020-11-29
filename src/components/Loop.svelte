@@ -8,6 +8,12 @@
   let { getPets } = getContext("pets");
 
   $: pets = getPets();
+  let selected = false;
+  let pid;
+  function addedCallback(petID) {
+    selected = true;
+    return pid = petID;
+  }
 </script>
 
 <style>
@@ -71,7 +77,11 @@
             </div>
           </div>
           <div class="pet-button text-center mb-3">
-            <button class="btn btn-wap-secondary adopt-this-pet-button" data-pet="pet-{petIndex}" on:click="{() => cart.add(pet)}">Adopt this pet</button>
+            {#if (selected === true) && (pid === pet.id)}
+            <a href="/checkout" class="btn btn-wap-secondary" use:link>Go to Checkout</a>
+            {:else}
+            <button class="btn btn-wap-secondary adopt-this-pet-button" id="pet-{pet.id}" data-pet="{pet.id}" on:click="{() => cart.add(pet, addedCallback(pet.id))}">Adopt this pet</button>
+            {/if}
           </div>
         </div>
       </div>

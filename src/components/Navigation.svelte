@@ -1,7 +1,7 @@
 <script>
   import { link } from "svelte-routing";
   let active = false;
-  
+
   function isCurrentRoute(href) {
     return href === window.location.pathname
   }
