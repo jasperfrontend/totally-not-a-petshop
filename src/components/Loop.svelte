@@ -1,5 +1,6 @@
 <script>
   import { cart } from "../data/cart";
+  import { link } from "svelte-routing";
   import { getContext, onMount } from "svelte";
 
   // export let pets = [];
@@ -70,7 +71,7 @@
             </div>
           </div>
           <div class="pet-button text-center mb-3">
-            <button class="btn btn-wap-secondary" on:click="{() => cart.add(pet)}">Adopt this pet</button>
+            <button class="btn btn-wap-secondary adopt-this-pet-button" data-pet="pet-{petIndex}" on:click="{() => cart.add(pet)}">Adopt this pet</button>
           </div>
         </div>
       </div>
@@ -78,11 +79,22 @@
     {/each}
   </div>
 </div>
+
+{#if ($cart.length != 0)}
 <div class="container">
   <div class="row">
-    <div class="col text-center mb-5">
-    <hr class="hr mb-5">
-      <a href="/gallery" class="btn btn-wap-secondary">View our pet collection</a>
+    <div class="col-md-12 mt-4 mb-4 text-center">
+      <a href="/checkout" class="btn btn-wap-secondary" use:link>Go to Checkout</a>
+      <button class="btn btn-wap-secondary" on:click="{() => cart.clear()}">Clear cart</button>
     </div>
   </div>
 </div>
+{:else}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mt-4 mb-4 text-center">
+      <h3>Select your favorite pet!</h3>
+    </div>
+  </div>
+</div>
+{/if}
