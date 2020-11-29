@@ -23,8 +23,14 @@ img {
   border-radius: 5px;
   box-shadow: 0 0 20px rgba(15,15,15,.5);
 }
+.pet-image:hover .pet-content,
+.pet-image:hover .pet-button {
+  opacity: 1;
+}
 .pet-content {
   width: 100%;
+  opacity: 0;
+  transition: opacity 200ms ease;
   .pet-data {
     width: 100%;
     background-color: $color-white-opac;
@@ -40,11 +46,15 @@ img {
 }
 .pet-price h3 {
   font-size: 18px;
-  border: 1px solid #ccc;
-  background: #efefef;
-  padding: 5px;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  font-weight: bold;
+  background: $color-secondary;
+  color: $color-white;
+  padding: 8px;
+  border-radius: 100%;
+}
+.pet-button {
+  opacity: 0;
+  transition: opacity 200ms ease;
 }
 </style>
 <div class="container">
@@ -63,7 +73,7 @@ img {
               </div>
             </div>
           </div>
-          <div class="text-center mb-3">
+          <div class="pet-button text-center mb-3">
             <button class="btn btn-wap-secondary" on:click="{() => cart.add(pet)}">Adopt this pet</button>
           </div>
         </div>
