@@ -9,7 +9,7 @@
   $: pets = getPets();
 </script>
 
-<style lang="scss">
+<style>
 img {
   width: 100%;
   height: auto;
@@ -56,7 +56,7 @@ img {
           <div class="pet-content p-3">
             <div class="pet-data mb-3 d-flex align-items-center justify-content-between">
               <div class="pet-title m-0 p-3 pb-0">
-                <h3>Pet {petIndex}</h3>
+                <h3>Pet {petIndex+1}</h3>
               </div>
               <div class="pet-price m-0 p-3 pb-0">
                 <h3>$4</h3>
