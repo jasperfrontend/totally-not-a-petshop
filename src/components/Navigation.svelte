@@ -1,5 +1,6 @@
 <script>
-let active = false;
+  import { link } from "svelte-routing";
+  let active = false;
 </script>
 
 <style>
@@ -45,16 +46,16 @@ let active = false;
 
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/" use:link>Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/pets">Pets</a>
+        <a class="nav-link" href="/gallery" use:link>Pets</a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="/cart">Your cart</a>
-      </li>
+      </li> -->
       <li class="nav-item">
-        <a class="nav-link" href="/checkout">Checkout</a>
+        <a class="nav-link" href="/checkout" use:link>Checkout</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0 ml-auto">

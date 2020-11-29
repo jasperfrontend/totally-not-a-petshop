@@ -3,7 +3,6 @@
   import Takeaways from './Takeaways.svelte';
   import Footer from './Footer.svelte';
   import { getContext, onMount } from "svelte";
-import { writable } from "svelte/store";
 
   // export let pets = [];
   export let petCount = 3;
@@ -35,7 +34,7 @@ img {
 </style>
 <div class="container">
   <div class="row">
-    {#each pets.slice(0, petCount) as pet, petIndex}
+    {#each $pets.slice(0, petCount) as pet, petIndex}
     <div class="col-md-4">
       <div class="pet mt-4 mb-4">
         <div class="pet-image">

@@ -1,10 +1,11 @@
 <script>
-  // import History from "../routes/History.svelte";
   import Home from "../routes/Home.svelte";
-  // import Pet from "../routes/Pet.svelte";
+  import Gallery from "../routes/Gallery.svelte";
+  import { Router, Route } from "svelte-routing"
 
   const routes = {
     "/": Home,
+    "/gallery": Gallery,
     // "/history": History,
     // "/pets/*": Pet,
   }
@@ -14,4 +15,7 @@
   $: routeComponent = routes[routePath] || routes[routePathWild];
 </script>
 
-<svelte:component this={routeComponent} />
+<Router>
+  <Route path="/" component={Home}/>
+  <Route path="/gallery" component={Gallery}/>
+</Router>
