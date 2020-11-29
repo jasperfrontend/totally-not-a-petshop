@@ -2,13 +2,13 @@
   // import History from "../routes/History.svelte";
   import Home from "../routes/Home.svelte";
   import Gallery from "../routes/Gallery.svelte";
-  import Single from "../routes/Single.svelte";
+  import Checkout from "../routes/Checkout.svelte";
   // import Pet from "../routes/Pet.svelte";
 
   const routes = {
     "/": Home,
     "/gallery": Gallery,
-    "/single/*": Single,
+    "/checkout": Checkout,
     // "/history": History,
     // "/pets/*": Pet,
   }
