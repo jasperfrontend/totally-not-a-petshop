@@ -23,6 +23,9 @@ a:hover {
 a:visited {
 	color: rgb(0,80,160);
 }
+img {
+  max-width: 100%;
+}
 
 label {
 	display: block;

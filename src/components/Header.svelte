@@ -11,6 +11,15 @@
 :global(html,body,h1,h2,h3,h4,h5,h6,p,div,header,main,footer,ul,ol,li,a,span) {
   font-family: 'Roboto', sans-serif;
 }
+:global(.page-title h1) {
+  font-weight: bold;
+  color: $color-primary;
+}
+:global(img) {
+  max-width: 100%;
+  height: auto;
+}
+
 .site-header {
   background: $color-primary;
 }
