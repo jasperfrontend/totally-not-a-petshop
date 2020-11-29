@@ -45,7 +45,7 @@
   <div class="navbar-collapse w-100" class:active={active} on:click="{() => active = !active}" id="wwd-pet-navbar">
 
     <ul class="navbar-nav">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="/" use:link>Home</a>
       </li>
       <li class="nav-item">
