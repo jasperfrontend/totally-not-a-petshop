@@ -10,7 +10,6 @@
 
   import { Router, Route } from "svelte-routing";
   import Checkout from './routes/Checkout.svelte';
-
   import Takeaways from './components/Takeaways.svelte';
   import Footer from './components/Footer.svelte';
   let pets = writable([]);
