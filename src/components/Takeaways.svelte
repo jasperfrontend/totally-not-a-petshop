@@ -1,3 +1,18 @@
+<style>
+.take-aways {
+  background-color: $color-primary;
+  .take-away-icon {
+    background: #fff;
+    display: inline-block;
+    padding: 2em;
+    border-radius: 100%;
+  }
+  h4 {
+    font-weight: normal;
+    font-size: 20px;
+  }
+}
+</style>
 <div class="take-aways">
   <div class="container p-5">
   <div class="row">
