@@ -10,11 +10,9 @@
   
   import { Router, Route } from "svelte-routing";
   import Checkout from './routes/Checkout.svelte';
-  
-  import Route from './components/Route.svelte';
   import Takeaways from './components/Takeaways.svelte';
   import Footer from './components/Footer.svelte';
-  import { API_KEY } from './constants/pixabay';
+  
   let pets = writable([]);
 
   setContext("pets", {

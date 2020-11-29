@@ -1,13 +1,5 @@
 <script>
-  import { cart } from "../data/cart";
-  import { getContext, onMount } from "svelte";
-  import { writable } from "svelte/store";
-
-  // export let pets = [];
-  export let petCount = 12;
-  let { getPets } = getContext("pets");
-
-  $: pets = getPets();
+  import Loop from "../components/Loop.svelte";
 </script>
 
 <style>
@@ -46,6 +38,7 @@ img {
   border-top-right-radius: 4px;
 }
 </style>
+
 <div class="container">
   <div class="row">
     <div class="col-12">
@@ -55,31 +48,5 @@ img {
     </div>
   </div>
 </div>
-<div class="container">
-  <div class="row">
-    {#each $pets.slice(0, petCount) as pet, petIndex}
-    <div class="col-md-4">
-      <div class="pet mt-4 mb-4">
-        <div class="pet-image" style="background: url({pet.webformatURL}) center center no-repeat; height: 300px;">
-          <!-- <img src={pet.webformatURL} alt="Pet {petIndex}"> -->
-        </div>
-        <div class="pet-content">
-          <div class="pet-data mb-3 d-flex justify-content-between">
-            <div class="pet-title m-0 p-3 pb-0">
-              <h3>Pet {petIndex}</h3>
-            </div>
-            <div class="pet-price m-0 p-3 pb-0">
-              <h3>$4</h3>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col text-center mt-0 mb-5">
-            <button class="btn btn-wap-secondary" on:click="{() => cart.add(pet)}">Adopt this pet</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    {/each}
-  </div>
-</div>
+
+<Loop petCount={12} />
