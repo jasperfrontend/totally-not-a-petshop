@@ -32,32 +32,19 @@ img {
     margin-bottom: 0;
   }
 }
-.take-aways {
-  background-color: $color-primary;
-  .take-away-icon {
-    background: #fff;
-    display: inline-block;
-    padding: 2em;
-    border-radius: 100%;
-  }
-  h4 {
-    font-weight: normal;
-    font-size: 20px;
-  }
-}
 </style>
 <div class="container">
-  <div class="row mb-5">
-    {#each $pets.slice(0, petCount) as pet, petIndex}
+  <div class="row">
+    {#each pets.slice(0, petCount) as pet, petIndex}
     <div class="col-md-4">
-      <div class="pet mt-4 mb-4 position-relative">
-        <div class="pet-image position-absolute">
+      <div class="pet mt-4 mb-4">
+        <div class="pet-image">
           <img src={pet.webformatURL} alt="Pet {petIndex}">
         </div>
-        <div class="pet-content position-absolute z-10" style="z-index: 10; margin-top: 6em">
+        <div class="pet-content">
           <div class="pet-data mb-3 d-flex justify-content-between">
             <div class="pet-title m-0 p-3 pb-0">
-              <h3>Exotic Bird Thing</h3>
+              <h3>Pet {petIndex}</h3>
             </div>
             <div class="pet-price m-0 p-3 pb-0">
               <h3>$4</h3>
@@ -66,17 +53,21 @@ img {
         </div>
         <div class="row">
           <div class="col text-center mb-5">
-            <a href="/pets" class="btn btn-wap-secondary">View our pet collection</a>
-            <button on:click="{() => cart.add(pet)}">ADD TO CART</button>
+            <button class="btn btn-wap-secondary" on:click="{() => cart.add(pet)}">ADD TO CART</button>
           </div>
         </div>
       </div>
     </div>
-    
     {/each}
   </div>
 </div>
-
+<div class="container">
+  <div class="row">
+    <div class="col text-center mb-5">
+      <a href="/pets" class="btn btn-wap-secondary">View our pet collection</a>
+    </div>
+  </div>
+</div>
 <Takeaways />
 
 <Footer />
