@@ -2,11 +2,19 @@
   import { onMount, setContext } from 'svelte';
   import { writable } from 'svelte/store';
   import Header from './components/Header.svelte';
+  
+  // import Route from './components/Route.svelte';
+  import { API_KEY } from './constants/pixabay';
+  import Gallery from './routes/Gallery.svelte';
+  import Home from './routes/Home.svelte';
+  
+  import { Router, Route } from "svelte-routing";
+  import Checkout from './routes/Checkout.svelte';
+  
   import Route from './components/Route.svelte';
   import Takeaways from './components/Takeaways.svelte';
   import Footer from './components/Footer.svelte';
   import { API_KEY } from './constants/pixabay';
-
   let pets = writable([]);
 
   setContext("pets", {
@@ -41,7 +49,13 @@
   @import 'scss/index.scss';
 </style>
 
-<Header />
-<Route />
-<Takeaways />
-<Footer />
+<Router>
+  <Header />
+
+  <Route path="/" component={Home}/>
+  <Route path="/gallery" component={Gallery}/>
+  <Route path="/checkout" component={Checkout}/>
+
+  <Takeaways />
+  <Footer />
+</Router>

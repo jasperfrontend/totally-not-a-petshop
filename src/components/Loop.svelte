@@ -1,7 +1,6 @@
 <script>
   import { cart } from "../data/cart";
   import { getContext, onMount } from "svelte";
-  import { writable } from "svelte/store";
 
   // export let pets = [];
   export let petCount = 3;
